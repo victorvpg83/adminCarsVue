@@ -1,17 +1,18 @@
 <template>
+    <!-- <iframe src="https://www.realoem.com/" frameborder="3"></iframe> -->
 <div class="divShadow mt-3">
 
 
-  <div class="pt-3">
-    <h1 >Averías</h1>
+  <!-- <div class="pt-3">
+    <h1 >Averías</h1> -->
     <!-- <h1 >Añadir avería</h1>
     <h1>Editar avería</h1> -->
-    <button
+    <!-- <button
       class="btn btn-primary mb-3"
     >
       Añadir avería
     </button>
-  </div>
+  </div> -->
 
 
 </div>
@@ -19,7 +20,11 @@
 
 <script>
 export default {
-
+name: "BreakDownTable",
+props: {
+    breakdowns: Array,
+    car: Object
+}
 }
 </script>
 

@@ -1,6 +1,7 @@
 <template>
   <!-- <div class="container-fluid"> -->
   <NavBar />
+  <font-awesome-icon icon="user-secret" />
 
   <router-view/>
   <!-- </div> -->

@@ -1,13 +1,17 @@
 <template>
-  <div class="mt-3">
+  <div class="mt-3" v-if="!loading">
     <h2>Mis vehículos</h2>
   </div>
-  <div>
+  <div v-if="loading" class="mt-5" >
+    <font-awesome-icon :icon="spinner" spin size="2x" />
+  </div>
+  <div v-if="!loading">
     <button
       class="btn btn-primary btn-block mb-2"
       data-toggle="modal"
       data-target="#addCarModal"
     >
+    <font-awesome-icon :icon="myIcon" />
       Añadir vehículo
     </button>
     <i class="bi bi-trash"></i>
@@ -153,16 +157,20 @@
 <script>
 import { mapState } from "vuex";
 import { Form, Field } from "vee-validate";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faCar, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   name: "SideBar",
   emits: ["click", "newcardata"],
   props: {
     cars: Array,
+    loading: Boolean
   },
   components: {
     Form,
     Field,
+    FontAwesomeIcon
   },
   data() {
     return {
@@ -174,6 +182,8 @@ export default {
         fuel: "",
         plate: "",
       },
+      myIcon: faCar,
+      spinner: faSpinner,
     };
   },
   computed: {

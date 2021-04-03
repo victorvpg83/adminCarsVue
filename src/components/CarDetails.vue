@@ -1,8 +1,9 @@
 <template>
+    <h1 class="animate_animated animate__fadeInDownBig">prueba</h1>
         <div v-if="!car.brand" class="alert alert-warning mt-4" role="alert">
             <h1 v-if="!car.brand" >Selecciona un vehículo o crea uno nuevo</h1>
         </div>
-    <div class="mt-4 divShadow pt-3" v-if="car.model">
+    <div class="mt-4 divShadow pt-3 " v-if="car.model">
         <h1 class="mb-5" v-if="car.model" >Detalles del vehículo</h1>
         <!-- <h1 v-if="!car.brand" >Selecciona un vehículo o crea uno nuevo</h1> -->
         <div class="row" >

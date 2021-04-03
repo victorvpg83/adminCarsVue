@@ -309,6 +309,7 @@
 <script>
 import maintenanceService from "../services/maintenance.service";
 import Swal from "sweetalert2";
+// import moment from "moment"
 
 export default {
   name: "MaintenanceTable",
@@ -394,7 +395,14 @@ export default {
     },
 
     showMaintenanceDetails(maintenance) {
+      // console.log(maintenance.date);
+      // const df = moment(maintenance.date).format('DD-MM-YYYY')
+      // console.log('df ',df)
+      // this.carMaintenance.date = df
       this.carMaintenance = maintenance
+    },
+    transformDate() {
+      console.log(this.maintenances)
     },
 
     async updateCarMaintenance(maintenanceId) {
@@ -435,9 +443,9 @@ export default {
     }
 
   },
-
+  
   mounted() {
-
+    this.transformDate()
   },
 };
 </script>
